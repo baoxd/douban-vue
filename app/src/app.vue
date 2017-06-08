@@ -1,6 +1,21 @@
 <!--suppress ALL -->
 <template>
-  <div id="app">
-    <router-view></router-view>
+  <div>
+  	<router-view></router-view>
   </div>
 </template>
+
+<script>
+  export default {
+  	data () {
+      return {
+      }
+    },
+	watch:{
+	  '$route'(to, from) {
+	  	 console.log(to)
+	  	 console.log(from)
+	  }
+	}
+  }
+</script>

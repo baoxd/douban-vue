@@ -13,7 +13,7 @@ module.exports = {
     chunkFilename: '[name].js'
   },
   resolve: {
-    extensions: ['*', '.js', '.vue'],
+    extensions: ['*', '.js', '.vue', '.css'],
     modules: ['node_modules', './app/src']
   },
   resolveLoader: {
@@ -30,6 +30,10 @@ module.exports = {
         loader: 'babel-loader',
         include: path.join(__dirname),
         exclude: /node_modules/
+      },
+      {
+        test:/\.css$/,
+        loader:"style-loader!css-loader"
       }
     ]
   },
