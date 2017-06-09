@@ -1,7 +1,7 @@
-// const Home = r => require(['./components/home'], r)
-// const NotFound = r => require(['./components/notfind'], r)
-import DHome from './components/d-home'
-import NotFound from './components/notfind'
+const DHome = r => require(['./components/d-home'], r)
+const NotFound = r => require(['./components/notfind'], r)
+// import DHome from './components/d-home'
+// import NotFound from './components/notfind'
 
 /*
 	路由数组

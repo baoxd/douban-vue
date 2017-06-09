@@ -18,6 +18,8 @@
   	  <template v-else>
   	  	
   	  </template>
+      <d-findmore></d-findmore>
+      <d-classbrowse></d-classbrowse>
   	</div>
   	<d-footer></d-footer>
   </div>
@@ -28,6 +30,8 @@
   import { mapState } from 'vuex'
   import DMovielist from './d-movielist'
   import DFooter from './d-footer'
+  import DFindmore from './d-findmore'
+  import DClassbrowse from './d-classbrowse'
   import {hotMovies, freeMovies, newMovies} from '../utils/staticData'
 
   export default {
@@ -51,6 +55,8 @@
   	},
   	components: {
   	  DMovielist,
+      DFindmore,
+      DClassbrowse,
   	  DFooter
   	}
   }
