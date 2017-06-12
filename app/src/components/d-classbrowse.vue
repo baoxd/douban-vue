@@ -17,11 +17,14 @@
 <script>
   import style from "../../../public/css/home.css"
   import { mapState } from 'vuex'
+  import resTypes from '../utils/resTypes'
 
   export default {
   	data() {
   	  return {
-  	  	list: null
+  	  	list: null,
+  	  	movielist: [],
+  	  	booklist: []
   	  }
   	},
   	computed: mapState([
@@ -29,18 +32,26 @@
   	]),
   	methods: {
   	  goToClassType(id, event) {
-        console.log('==========查看相關類型電影=========')
         console.log(id)
         console.log(event)
+  	  },
+  	  changeData(newType) {
+        if(newType == resTypes.movie){
+          this.list = this.movielist
+        }else if(newType == resTypes.book){
+          this.list = this.booklist
+        }
   	  }
   	},
+  	watch: {
+      currResType(newType) {
+      	this.changeData(newType)
+      }
+  	},
   	created() {
-  	  let currResType = this.currResType;
-
-  	  if(currResType === 'movie'){
-  	  	this.list = [
-  	  	  {
-			title:"经典",
+	  this.movielist = [
+	  	{
+		    title:"经典",
 			link:"/movie/classic"
 		  },
 		  {
@@ -103,59 +114,58 @@
 			title:"韩国",
 			link:"/movie/korean"
 		  }
-  	    ]
-  	  }else if(currResType === 'book'){
-  	  	this.list = [
-  	  	  {
-			title:"小说",
-			link:"/book/novel"
-		  },
-		  {
-			title:"爱情",
-			link:"/book/love"
-		  },
-		  {
-			title:"历史",
-			link:"/book/history"
-		  },
-		  {
-			title:"外国文学",
-			link:"/book/foreign"
-		  },
-		  {
-			title:"青春",
-			link:"/book/youth"
-		  },
-		  {
-			title:"励志",
-			link:"/book/motivation"
-		  },
-		  {
-			title:"随笔",
-			link:"/book/essay"
-		  },
-		  {
-			title:"传记",
-			link:"/book/bio"
-		  },
-		  {
-			title:"推理",
-			link:"/book/detective"
-		  },
-		  {
-			title:"旅行",
-			link:"/book/travel"
-		  },
-		  {
-			title:"奇幻",
-			link:"/book/fantasy"
-		  },
-		  {
-			title:"经管",
-			link:"/book/business"
-		  }
-  	  	]
-  	  }
+	  ]
+	  this.booklist = [
+	  	  {
+		title:"小说",
+		link:"/book/novel"
+	  },
+	  {
+		title:"爱情",
+		link:"/book/love"
+	  },
+	  {
+		title:"历史",
+		link:"/book/history"
+	  },
+	  {
+		title:"外国文学",
+		link:"/book/foreign"
+	  },
+	  {
+		title:"青春",
+		link:"/book/youth"
+	  },
+	  {
+		title:"励志",
+		link:"/book/motivation"
+	  },
+	  {
+		title:"随笔",
+		link:"/book/essay"
+	  },
+	  {
+		title:"传记",
+		link:"/book/bio"
+	  },
+	  {
+		title:"推理",
+		link:"/book/detective"
+	  },
+	  {
+		title:"旅行",
+		link:"/book/travel"
+	  },
+	  {
+		title:"奇幻",
+		link:"/book/fantasy"
+	  },
+	  {
+		title:"经管",
+		link:"/book/business"
+	  }
+	  ]
+	  this.changeData(this.currResType)
   	}
   }
 </script>

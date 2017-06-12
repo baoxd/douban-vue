@@ -6,15 +6,25 @@ const NotFound = r => require(['./components/notfind'], r)
 /*
 	路由数组
 */
-const routes = [{
+const routes = [
+  {
 	path: '',
 	component: DHome
-}]
+  },
+  {
+	path: '/movie',
+	component: DHome
+  },
+  {
+  	path: '/book',
+  	component: DHome
+  }
+]
 
 routes.push({
-	path: '*',
-	name: 'notfind',
-	component: NotFound
+  path: '*',
+  name: 'notfind',
+  component: NotFound
 })
 
 export default routes
