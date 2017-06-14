@@ -36,7 +36,6 @@
 </template>
 
 <script>
-  // import style from "../../../public/css/home.css"
 
   export default {
   	prop: ['books'],

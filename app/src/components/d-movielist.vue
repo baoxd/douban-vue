@@ -3,7 +3,7 @@
     <header>
 	  <h2>{{ title }}</h2>
 	  <!-- <a href="/movie/nowintheater?loc_id=108288">更多</a> -->
-	  <router-link v-bind:to="movietype">更多</router-link>
+	  <router-link v-bind:to="morelink">更多</router-link>
 	</header>
     <div class="section-content">
       <ul class="row items">
