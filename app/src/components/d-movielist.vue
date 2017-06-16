@@ -34,7 +34,6 @@
 </template>
 
 <script>
-  import style from "../../../public/css/home.css";
 
   export default {
     props: ['movies', 'title', 'movietype'],

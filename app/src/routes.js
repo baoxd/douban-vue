@@ -3,22 +3,23 @@
 import DHome from './components/d-home'
 import NotFound from './components/notfind'
 import DMoremovie from './components/d-moremovie'
+import DMorebook from './components/d-morebook'
 
 /*
-	路由数组
+  路由数组
 */
 const routes = [
   {
-	  path: '',
-	  component: DHome
+    path: '',
+    component: DHome
   },
   {
-	  path: '/movie',
-	  component: DHome
+    path: '/movie',
+    component: DHome
   },
   {
-  	path: '/book',
-  	component: DHome
+    path: '/book',
+    component: DHome
   },
   {
     path: '/movie/hotmore',
@@ -31,6 +32,14 @@ const routes = [
   {
     path: '/movie/newmore',
     component: DMoremovie
+  },
+  {
+    path: '/book/hotfiction',
+    component: DMorebook
+  },
+  {
+    path: '/book/hotnonfiction',
+    component: DMorebook
   }
 ]
 

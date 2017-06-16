@@ -4,7 +4,7 @@
   	  <!-- 电影 -->
   	  <template v-if="currResType === 'movie'">
   	    <!-- 热门电影 -->
-  	  	<d-movielist v-bind:movies="hotMoviesList" title="影院热映" movietype="hot"></d-movielist>
+  	  	<d-movielist v-bind:movies="hotMovies" title="影院热映" movietype="hot"></d-movielist>
   	  	<!-- 免费电影 -->
   	  	<d-movielist v-bind:movies="freeMovies" title="免费在线观影" movietype="free"></d-movielist>
   	  	<!-- 新片速递 -->
@@ -39,13 +39,13 @@
   import DFooter from './d-footer'
   import DFindmore from './d-findmore'
   import DClassbrowse from './d-classbrowse'
-  import {hotMovies, freeMovies, newMovies, fictitiousBooks, realityBooks, paperBooks} from '../utils/staticData'
+  import { freeMovies, newMovies, fictitiousBooks, realityBooks, paperBooks} from '../utils/staticData'
 
   export default {
   	data(){
   		return {
   		  // 热门电影
-  		  hotMoviesList:[],
+  		  // hotMoviesList:[],
    		  // 免费电影
    		  freeMovies: [],
    		  // 新片速递
@@ -59,15 +59,20 @@
   		}
   	},
   	computed: mapState([
-  	  'currResType'
+  	  'currResType',
+      'hotMovies'
   	]),
+    beforeCreate(){
+      this.$store.dispatch('getHotMovies')
+    },
   	created(){
-  	  this.hotMoviesList = hotMovies
+  	  // this.hotMoviesList = hotMovies
   	  this.freeMovies = freeMovies
   	  this.newMovies = newMovies
       this.fictitiousBooks = fictitiousBooks
       this.realityBooks = realityBooks
       this.paperBooks = paperBooks
+      // console.log(this.$store.state.test.test)
   	},
   	components: {
   	  DMovielist,

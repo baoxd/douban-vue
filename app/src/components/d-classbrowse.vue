@@ -15,7 +15,6 @@
 </template>
 
 <script>
-  import style from "../../../public/css/home.css"
   import { mapState } from 'vuex'
   import resTypes from '../utils/resTypes'
 

@@ -57,7 +57,6 @@
      }else if(route.path == '/movie/newmore'){
      	this.movies = newMovies
      }
-     console.log(this.movies)
    },
    components: {
      DHeader
